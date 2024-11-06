@@ -15,3 +15,31 @@ GET /ninjas/:id --> {...}
 POST/ninjas
 PUT/ninjas/:id --> {...}
 DELETE /ninjas/:id
+
+
+Pipes:
+    //GET /ninjas/:id --> {...}
+    @Get(':id')
+    getOneNinja(@Param('id') id:string){
+        try { 
+            return this.ninjasService.getNinja(+id)
+        } catch {
+            throw new NotFoundException()
+        }
+    }
+
+
+        //GET /ninjas/:id --> {...}
+    @Get(':id')
+    getOneNinja(@Param('id', ParseIntPipe) id:number){
+        try { 
+            return this.ninjasService.getNinja(id)
+        } catch {
+            throw new NotFoundException()
+        }
+    }
+
+npm i -- save class-validator class-transformer
+
+
+
