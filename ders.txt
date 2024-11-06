@@ -1,0 +1,17 @@
+nest new ninja-api
+npm run start:dev
+HTTP GET / --> controller --> service
+
+nest generate module ninjas
+nest generate controller ninjas
+nest generate service ninjas
+
+////nest generate resource ninjas
+nest generate resource users --dry-run
+nest generate resource users
+
+GET/ninjas --> []
+GET /ninjas/:id --> {...}
+POST/ninjas
+PUT/ninjas/:id --> {...}
+DELETE /ninjas/:id
